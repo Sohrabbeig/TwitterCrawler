@@ -34,7 +34,7 @@ class Crawler:
 
     def retweeters(self, tweet_id):
         rets = []
-        for ret in tweepy.Cursor(self.api.retweeters, id=tweet_id).items():
+        for ret in limit_handled(tweepy.Cursor(self.api.retweeters, id=tweet_id).items()):
             rets.append(str(ret))
         return rets
 
