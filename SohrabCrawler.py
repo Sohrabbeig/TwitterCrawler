@@ -18,7 +18,9 @@ def limit_handled(cursor):
 
 
 class Crawler:
-    api, collection_tweeters, collection_users = None
+    api = None
+    collection_tweeters = None
+    collection_users = None
 
     def __init__(self):
         auth = OAuthHandler(consumer_key, consumer_secret)
